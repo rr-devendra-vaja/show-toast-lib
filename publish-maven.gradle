@@ -1,0 +1,30 @@
+
+
+allprojects {
+    group = "com.shree.ganesha"
+    version = "1.0.0"
+}
+allprojects {
+    println("Project = ${this.name}, ${this.childProjects.values()}")
+    afterEvaluate {
+        println plugins.properties
+        println plugins.hasPlugin("android")
+
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    println components.release
+                    from components.release
+                    artifactId = "$rootProject.name-$project.name"
+                }
+                // publications {
+                //     release()
+                //     // maven(MavenPublication) {
+                //     //     artifactId =
+                //     // }
+                // }
+            }
+        }
+    }
+}
+

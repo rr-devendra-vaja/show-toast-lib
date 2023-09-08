@@ -13,6 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Colorful Toast"
+rootProject.name = "colorfultoast"
 include(":app")
 include(":myerrortoastlibrary")
+include(":mywarningtoastlibrary")
